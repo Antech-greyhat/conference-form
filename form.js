@@ -42,3 +42,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3000); // Wait 3 seconds to simulate server latency
     });
 });
+
+
+// vibe codded
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    const content = document.getElementById('content');
+
+    // 1. Add the fade-out class to the preloader
+    // This starts the CSS transition (opacity: 0)
+    preloader.classList.add('fade-out');
+
+    // 2. Wait for the fade-out transition to complete (0.5 seconds in our CSS)
+    // Then hide the preloader completely and display the content.
+    setTimeout(() => {
+        // Optional: Completely remove the preloader from the DOM
+        preloader.style.display = 'none';
+
+        // Show the main content
+        content.style.display = 'block';
+
+    }, 500); // Wait time matches the CSS transition time (0.5s)
+});
